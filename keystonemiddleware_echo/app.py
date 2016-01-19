@@ -10,7 +10,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import pbr.version
+import json
+import webob.dec
 
-__version__ = pbr.version.VersionInfo(
-    'keystonemiddleware_echo').version_string()
+
+@webob.dec.wsgify
+def echo_app(request):
+    """A WSGI application that echoes the CGI environment to the user."""
+    return webob.Response(content_type='application/json',
+                          body=json.dumps(request.environ, indent=4))
+
+
+def echo_app_factory(global_conf, **local_conf):
+    import ipdb; ipdb.set_trace()
+    return echo_app
