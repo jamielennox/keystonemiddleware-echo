@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = keystonemiddleware_echo
+omit = keystonemiddleware_echo/openstack/*
+
+[report]
+ignore_errors = True
