@@ -20,7 +20,7 @@ CONF = cfg.CONF
 OPTS = {
     'paste_deploy': [
         cfg.StrOpt('config_file',
-                   default='keystonemiddleware_echo-paste.ini',
+                   default='keystonemiddleware-echo-paste.ini',
                    help='Name of the paste configuration file that defines '
                         'the available pipelines.'),
     ],
@@ -34,7 +34,7 @@ def configure():
     for k, v in OPTS.items():
         CONF.register_opts(v, group=k)
 
-    CONF(project='keystonemiddleware_echo')
+    CONF(project='keystonemiddleware-echo')
     CONF.log_opt_values(logging.getLogger(__name__), logging.DEBUG)
 
 
