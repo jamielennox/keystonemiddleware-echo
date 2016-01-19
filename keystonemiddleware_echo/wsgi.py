@@ -13,8 +13,7 @@
 import os
 
 from oslo_config import cfg
-from paste.deploy import loadapp
-from wsgiref import simple_server
+import paste.deploy
 
 from keystonemiddleware_echo import config
 
@@ -28,8 +27,4 @@ def echo_app():
     if not os.path.isabs(paste_config):
         paste_config = CONF.find_file(paste_config)
 
-    app = loadapp('config:%s' % paste_config)
-
-    server = simple_server.make_server('', 8000, app)
-    print('Serving on port 8000 (Ctrl+C to end)...')
-    server.serve_forever()
+    return paste.deploy.loadapp('config:%s' % paste_config)
