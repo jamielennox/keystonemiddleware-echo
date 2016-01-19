@@ -10,7 +10,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import json
+import pprint
 import webob.dec
 
 
@@ -18,9 +18,8 @@ import webob.dec
 def echo_app(request):
     """A WSGI application that echoes the CGI environment to the user."""
     return webob.Response(content_type='application/json',
-                          body=json.dumps(request.environ, indent=4))
+                          body=pprint.pformat(request.environ, indent=4))
 
 
 def echo_app_factory(global_conf, **local_conf):
-    import ipdb; ipdb.set_trace()
     return echo_app
