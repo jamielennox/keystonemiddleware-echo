@@ -2,18 +2,14 @@
 keystonemiddleware-echo
 ===============================
 
-Echo your environment back to you 
-
-Please feel here a long description which must be at least 3 lines wrapped on
-80 cols, so that distribution package maintainers can use it in their packages.
-Note that this is a hard requirement.
+Echo your environment back to you
 
 * Free software: Apache license
 * Documentation: http://docs.openstack.org/developer/keystonemiddleware-echo
-* Source: http://git.openstack.org/cgit/jamielennox/keystonemiddleware-echo
-* Bugs: http://bugs.launchpad.net/replace with the name of the project on launchpad
+* Source: http://github.com/jamielennox/keystonemiddleware-echo
+* Bugs: http://github.com/jamielennox/keystonemiddleware-echo/issues
 
 Features
 --------
 
-* TODO
+Designed to test out your keystonemiddleware environment setup.
